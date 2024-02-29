@@ -1,0 +1,23 @@
+* {
+  font-family: "Roboto Slab";
+}
+
+body {
+  text-align: center;
+}
+
+input {
+  text-align: center;
+}
+
+button {
+  background-color: hsl(195, 53%, 79%);
+  border: 1px solid black;
+  padding: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: hsl(195, 53%, 69%);
+}

@@ -1,5 +1,11 @@
+const passowrd = document.getElementById("password");
+passowrd.addEventListener("keypress", function (e) {
+  if (e.key == "Enter") {
+    buttonClick();
+  }
+});
+
 function addQuestion() {
-  const formContainer = document.getElementById("formContainer");
   const newContainer = document.createElement("div");
   const container = document.getElementById("container");
   const newH3 = document.createElement("h3");
@@ -10,6 +16,17 @@ function addQuestion() {
   newTextBox.placeholder = "Enter Name Here";
   newTextBox.setAttribute("id", "textBox");
   newButton.innerText = "Submit";
+  newTextBox.addEventListener("keypress", function (e) {
+    if (e.key == "Enter") {
+      if (document.getElementById("textBox").value != "") {
+        const textBox = document.getElementById("textBox").value;
+        newContainer.remove();
+        newH3.innerText = `Welcome, ${textBox}`;
+        container.appendChild(newH3);
+      }
+    }
+  });
+
   newButton.onclick = function checkName() {
     if (document.getElementById("textBox").value != "") {
       const textBox = document.getElementById("textBox").value;
@@ -31,6 +48,7 @@ function buttonClick() {
   const passowrd = document.getElementById("password");
   const fLabel = document.getElementById("fLabel");
   const sLabel = document.getElementById("sLabel");
+
   if (userName.value.toLowerCase() == "admin" && passowrd.value == "123") {
     formContainer.remove();
     addQuestion();
